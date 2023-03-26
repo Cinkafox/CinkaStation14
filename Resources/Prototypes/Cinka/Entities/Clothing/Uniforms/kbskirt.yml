@@ -1,0 +1,10 @@
+﻿- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtKB
+  name: Форма работника КБ
+  description: Форма раба сети магазина алкашки
+  components:
+    - type: Sprite
+      sprite: Cinka/Clothing/Uniforms/Jumpskirt/kb.rsi
+    - type: Clothing
+      sprite: Cinka/Clothing/Uniforms/Jumpskirt/kb.rsi

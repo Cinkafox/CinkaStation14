@@ -1,0 +1,50 @@
+- type: entity
+  name: Близняшка
+  description: Куда ебать?
+  id: twin
+  parent: PlayerSiliconBase
+  components:
+  - type: InnateTool
+    tools:
+      - id: WeaponMinigun
+      - id: EnergySword
+      - id: WeaponLauncherMultipleRocket
+      - id: WeaponXrayCannon
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: GhostTakeoverAvailable
+    makeSentient: true
+    name: Близняшка левая
+    description: Куда тебя ебать?
+    rules: Еби сам!
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 5
+    baseSprintSpeed : 6
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Dead
+  - type: Sprite
+    drawdepth: Mobs
+    netsync: false
+    layers:
+    - state: main
+      sprite: Cinka/twins.rsi
+  - type: MovementIgnoreGravity
+  - type: Fixtures
+    fixtures:
+    - shape:
+        !type:PhysShapeCircle
+        radius: 1
+      density: 160
+      mask:
+      - LargeMobMask
+      layer:
+      - LargeMobLayer
+  - type: CombatMode

@@ -1,0 +1,73 @@
+- type: entity
+  parent: MobHuman
+  id: MobHumanNekoGirl
+  name: Кошкослужанка
+  components:
+    - type: Loadout
+      prototype: NekoGear
+      prototypes: [NekoGear]
+    - type: RandomMetadata
+      nameSegments: [cinka_names_neko]
+    - type: Faction
+      factions:
+      - Syndicate
+
+- type: entity
+  id: RandomHumanoidSpawnerNekoGirl
+  name: Спавнер Кошколужанки
+  components:
+    - type: Sprite
+      netsync: false
+      sprite: Mobs/Species/Human/parts.rsi
+      state: full
+    - type: RandomMetadata
+      nameSegments: [cinka_names_evil_neko]
+    - type: RandomHumanoidSpawner
+      settings: NekoGirl
+
+- type: randomHumanoidSettings
+  id: NekoGirl
+  components:
+    - type: GhostTakeoverAvailable
+      makeSentient: true
+      name: Кошкогорничная
+      description: Служите своему хозяину!
+      rules: Вы не должны помнить свою прошлую жизнь! Теперь вы - кошкослужанка! И что до этого было неважно!
+    - type: MovementSpeedModifier
+      baseWalkSpeed : 5
+      baseSprintSpeed : 6
+    - type: InteractionPopup
+      successChance: 0.7
+      interactSuccessString: petting-success-cat
+      interactFailureString: petting-failure-generic
+      interactSuccessSound:
+      path: /Audio/Animals/cat_meow.ogg
+    - type: Grammar
+      attributes:
+        proper: true
+        gender: female
+    - type: NekoGirl
+    - type: Speech
+      speechSounds: Cat
+    - type: Loadout
+      prototypes: [NekoGear]
+
+- type: entity
+  id: ClothingHeadHatCatEarsUnremoveable
+  parent: ClothingHeadHatCatEars
+  components:
+    - type: Unremoveable
+
+- type: startingGear
+  id: NekoGear
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtJanimaid
+    back: ClothingBackpackFilled
+    id: JanitorPDA
+    head: ClothingHeadHatCatEarsUnremoveable
+    ears: ClothingHeadsetService
+    belt: ClothingBeltJanitorFilled
+  innerclothingskirt: ClothingUniformJumpskirtJanimaid
+  satchel: ClothingBackpackSatchelFilled
+  duffelbag: ClothingBackpackDuffelFilled
+

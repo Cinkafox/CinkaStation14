@@ -1,0 +1,12 @@
+﻿- type: entity
+  name: Призыватель кошкогорничной
+  parent: BaseItem
+  id: NekoGirlSummoner
+  description: Из него доносятся постоянное мяукание
+  components:
+    - type: Sprite
+      sprite: Cinka/nekogirlspawner.rsi
+      state: icon
+    - type: UseDelay
+      delay: 0.2
+    - type: NekoGirlSummoner

@@ -1,0 +1,6 @@
+- type: vendingMachineInventory
+  id: EleonoraInventory
+  startingInventory:
+    Dick: 10
+    ClothingHeadHatCatEars: 5
+    Handcuffs: 4

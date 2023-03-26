@@ -1,0 +1,31 @@
+﻿- type: entity
+  parent: BaseVehicle
+  id: VehicleWheelChair
+  name: Инвалидная коляска
+  description: Смотри не врезайся!
+  components:
+    - type: AmbientSound
+      sound: ""
+    - type: Vehicle
+      hasKey: true
+    - type: Sprite
+      sprite: Cinka/Objects/Vehicles/wheelchair.rsi
+      layers:
+        - state: vehicle
+          map: ["enum.VehicleVisualLayers.AutoAnimate"]
+      netsync: false
+      noRot: true
+    - type: Strap
+      maxBuckleDistance: 1
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 1
+      baseSprintSpeed: 2
+    - type: ItemSlots
+      slots:
+        key_slot:
+          name: Keys
+          whitelist:
+            requireAll: true
+            tags:
+              - VehicleKey
+              - WheelChairKeys

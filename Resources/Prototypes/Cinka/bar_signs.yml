@@ -1,0 +1,5 @@
+﻿- type: barSign
+  id: KBSign
+  name: barsign-prototype-name-alcoholic
+  icon: "redandwhite"
+  description: barsign-prototype-description-alcoholic

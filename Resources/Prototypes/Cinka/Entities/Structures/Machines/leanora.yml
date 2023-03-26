@@ -1,0 +1,21 @@
+- type: entity
+  id: Eleonora
+  parent: VendingMachine
+  name: Элеонора
+  description: Я не буду ебать холодильник!
+  components:
+  - type: VendingMachine
+    pack: EleonoraInventory
+  - type: Sprite
+    sprite: Cinka/eleonora.rsi
+    state: main
+    snapCardinals: false
+  - type: Advertise
+    pack: EleonoraAds
+  - type: Speech
+  - type: BlowJob
+    BlowJobCount: 5
+  - type: Transform
+    noRot: false
+  - type: Pullable
+

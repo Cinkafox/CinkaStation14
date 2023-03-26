@@ -1,0 +1,11 @@
+﻿- type: entity
+  parent: BaseBarSign
+  id: BarSignKB
+  name: Красное&Белое
+  description: Pour it on, that's all. Hard times have come...
+  components:
+    - type: Sprite
+      drawdepth: Objects
+      sprite: Structures/Wallmounts/barsign.rsi
+    - type: BarSign
+      current: KBSign

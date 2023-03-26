@@ -1,0 +1,14 @@
+﻿- type: entity
+  parent: VehicleKeyATV
+  id: VehicleKeyWheelChair
+  name: Ключи от инвалидной коляски
+  description: Чтобы другие инвалиды не угнали вашу коляску.
+  components:
+    - type: Tag
+      tags:
+        - VehicleKey
+        - WheelChairKeys
+    - type: Sprite
+      sprite: Cinka/Objects/Vehicles/wheelchair.rsi
+      state: keys
+      netsync: false

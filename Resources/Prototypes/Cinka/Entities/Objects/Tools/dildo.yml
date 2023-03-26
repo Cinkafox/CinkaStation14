@@ -1,0 +1,11 @@
+- type: entity
+  name: Хуй
+  parent: BaseItem
+  id: Dick
+  description: Его обычно пинают
+  components:
+  - type: Sprite
+    sprite: Cinka/dildo.rsi
+    state: icon
+  - type: UseDelay
+    delay: 0.2
