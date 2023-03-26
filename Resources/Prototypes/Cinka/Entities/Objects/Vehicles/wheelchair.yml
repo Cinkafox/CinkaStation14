@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: BaseVehicle
   id: VehicleWheelChair
-  name: Инвалидная коляска
-  description: Смотри не врезайся!
+  name: WheelChair
+  description: Look don't crash!
   components:
     - type: AmbientSound
       sound: ""

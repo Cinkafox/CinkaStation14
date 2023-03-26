@@ -1,8 +1,8 @@
 ﻿- type: entity
-  parent: VehicleKeyATV
+  parent: VehicleKeyJanicart
   id: VehicleKeyWheelChair
-  name: Ключи от инвалидной коляски
-  description: Чтобы другие инвалиды не угнали вашу коляску.
+  name: Wheelchair keys
+  description: To prevent other disabled people from stealing your wheelchair
   components:
     - type: Tag
       tags:
@@ -12,3 +12,6 @@
       sprite: Cinka/Objects/Vehicles/wheelchair.rsi
       state: keys
       netsync: false
+
+- type: Tag
+  id: WheelChairKeys
