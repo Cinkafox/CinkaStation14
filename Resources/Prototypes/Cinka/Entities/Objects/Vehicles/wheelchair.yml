@@ -1,5 +1,5 @@
 ﻿- type: entity
-  parent: BaseVehicle
+  parent: [BaseVehicle, BaseFoldable]
   id: VehicleWheelChair
   name: WheelChair
   description: Look don't crash!
@@ -12,14 +12,23 @@
       sprite: Cinka/Objects/Vehicles/wheelchair.rsi
       layers:
         - state: vehicle
-          map: ["enum.VehicleVisualLayers.AutoAnimate"]
+          map: ["enum.VehicleVisualLayers.AutoAnimate","unfoldedLayer"]
+        - state: vehicle_folded
+          map: ["foldedLayer"]
+          visible: false
       netsync: false
       noRot: true
+    - type: Item
+      size: 50
     - type: Strap
       maxBuckleDistance: 1
     - type: MovementSpeedModifier
       baseWalkSpeed: 1
       baseSprintSpeed: 2
+    - type: ContainerFill
+      containers:
+        key_slot:
+          - VehicleKeyWheelChair
     - type: ItemSlots
       slots:
         key_slot:

@@ -1,13 +1,13 @@
 - type: entity
   id: Eleonora
   parent: VendingMachine
-  name: Элеонора
-  description: Я не буду ебать холодильник!
+  name: Eleonora
+  description: Fuckable fridge!
   components:
   - type: VendingMachine
     pack: EleonoraInventory
   - type: Sprite
-    sprite: Cinka/eleonora.rsi
+    sprite: Cinka/Structures/Machines/eleonora.rsi
     state: main
     snapCardinals: false
   - type: Advertise

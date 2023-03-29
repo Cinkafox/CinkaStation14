@@ -1,7 +1,7 @@
 - type: entity
   parent: MobHuman
   id: MobHumanNekoGirl
-  name: Кошкослужанка
+  name: Nekomaid
   components:
     - type: Loadout
       prototype: NekoGear
@@ -14,7 +14,7 @@
 
 - type: entity
   id: RandomHumanoidSpawnerNekoGirl
-  name: Спавнер Кошколужанки
+  name: Nekomaid spawner
   components:
     - type: Sprite
       netsync: false
@@ -30,9 +30,9 @@
   components:
     - type: GhostTakeoverAvailable
       makeSentient: true
-      name: Кошкогорничная
-      description: Служите своему хозяину!
-      rules: Вы не должны помнить свою прошлую жизнь! Теперь вы - кошкослужанка! И что до этого было неважно!
+      name: Nekomaid
+      description: Serve your master!
+      rules: You don't have to remember your past life! You are now a nekomaid! And before that it didn't matter!
     - type: MovementSpeedModifier
       baseWalkSpeed : 5
       baseSprintSpeed : 6

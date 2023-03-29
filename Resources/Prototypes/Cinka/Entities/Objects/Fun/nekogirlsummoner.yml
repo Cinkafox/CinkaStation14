@@ -1,0 +1,12 @@
+﻿- type: entity
+  name: Nekomaid Summoner
+  parent: BaseItem
+  id: NekoGirlSummoner
+  description: It emits a constant meow
+  components:
+    - type: Sprite
+      sprite: Cinka/Fun/nekogirlspawner.rsi
+      state: icon
+    - type: UseDelay
+      delay: 0.2
+    - type: NekoGirlSummoner

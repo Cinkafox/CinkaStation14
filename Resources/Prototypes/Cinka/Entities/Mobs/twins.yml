@@ -1,6 +1,6 @@
 - type: entity
-  name: Близняшка
-  description: Куда ебать?
+  name: twin
+  description: Where fuck?
   id: twin
   parent: PlayerSiliconBase
   components:
@@ -16,9 +16,9 @@
       type: StrippableBoundUserInterface
   - type: GhostTakeoverAvailable
     makeSentient: true
-    name: Близняшка левая
-    description: Куда тебя ебать?
-    rules: Еби сам!
+    name: twin
+    description: Where fuck?
+    rules: Fuck yourself!
   - type: MovementSpeedModifier
     baseWalkSpeed : 5
     baseSprintSpeed : 6
@@ -35,7 +35,7 @@
     netsync: false
     layers:
     - state: main
-      sprite: Cinka/twins.rsi
+      sprite: Cinka/Mobs/twins.rsi
   - type: MovementIgnoreGravity
   - type: Fixtures
     fixtures:
