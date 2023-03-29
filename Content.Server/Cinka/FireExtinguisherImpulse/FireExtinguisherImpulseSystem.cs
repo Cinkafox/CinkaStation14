@@ -14,10 +14,10 @@ public sealed class FireExtinguisherImpulseSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<SprayComponent, SprayAttemptEvent>(OnPshikAttempt);
+        SubscribeLocalEvent<SprayComponent, SprayAttemptEvent>(OnSprayAttempt);
     }
 
-    private void OnPshikAttempt(EntityUid uid, SprayComponent component, SprayAttemptEvent args)
+    private void OnSprayAttempt(EntityUid uid, SprayComponent component, SprayAttemptEvent args)
     {
         if (TryComp<RiderComponent>(args.User, out var rider) && !args.Cancelled && TryComp<SolutionContainerManagerComponent>(uid,out var scmc))
         {
