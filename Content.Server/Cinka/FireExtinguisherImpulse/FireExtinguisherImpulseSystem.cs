@@ -1,4 +1,5 @@
 ﻿using Content.Server.Chemistry.Components.SolutionManager;
+using Content.Server.Cinka.FireExtinguisherImpulse.Components;
 using Content.Server.Fluids.Components;
 using Content.Server.Fluids.EntitySystems;
 using Content.Shared.Throwing;
@@ -19,13 +20,19 @@ public sealed class FireExtinguisherImpulseSystem : EntitySystem
 
     private void OnSprayAttempt(EntityUid uid, SprayComponent component, SprayAttemptEvent args)
     {
-        if (TryComp<RiderComponent>(args.User, out var rider) && !args.Cancelled && TryComp<SolutionContainerManagerComponent>(uid,out var scmc))
-        {
-            if (rider.Vehicle != null && TryComp<PhysicsComponent>(rider.Vehicle.Value, out var physics) && scmc.Solutions["spray"].Volume > 0)
-            {
-                _throwing.TryThrow(rider.Vehicle.Value, physics.LinearVelocity, user: args.User, pushbackRatio: 50f);
-            }
+        if (!TryComp<RiderComponent>(args.User, out var rider) || args.Cancelled ||
+            !TryComp<SolutionContainerManagerComponent>(uid, out var scmc))
+            return;
 
+        if (scmc.Solutions["spray"].Volume > 0)
+        {
+            TryThrow(rider.Vehicle,args.User);
         }
+    }
+
+    private void TryThrow(EntityUid? vehicle,EntityUid rider)
+    {
+        if(vehicle != null && TryComp<PhysicsComponent>(vehicle.Value, out var physics) && TryComp<FireExtinguisherImpulseComponent>(vehicle.Value,out _))
+            _throwing.TryThrow(vehicle.Value, physics.LinearVelocity, user: rider, pushbackRatio: 50f);
     }
 }
