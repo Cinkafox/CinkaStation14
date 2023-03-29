@@ -23,7 +23,7 @@ namespace Content.Server.Cinka.BlowJob
         {
             component.Clicked=(component.Clicked + 1)% (component.BlowCount+1);
             if (component.Clicked < component.BlowCount) return;
-            _popupSystem.PopupEntity("Вы чувствуете как вас ебут в жопу", args.User);
+            _popupSystem.PopupEntity("вас насильно ебут в жопу", args.User);
 
             Solution bloodSolution = new();
             bloodSolution.AddReagent("Blood", 50);

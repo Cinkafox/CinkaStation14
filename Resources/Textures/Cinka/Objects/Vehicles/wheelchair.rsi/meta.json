@@ -12,6 +12,10 @@
       "directions": 4
     },
     {
+      "name": "vehicle_clown",
+      "directions": 4
+    },
+    {
       "name": "vehicle_folded"
     },
     {

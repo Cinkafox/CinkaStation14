@@ -39,3 +39,17 @@
             tags:
               - VehicleKey
               - WheelChairKeys
+
+- type: entity
+  parent: VehicleWheelChair
+  id: VehicleWheelChairClown
+  name: Clown WheelChair
+  description: Sad honk honk!
+  components:
+    - type: Sprite
+      layers:
+        - state: vehicle_clown
+          map: ["enum.VehicleVisualLayers.AutoAnimate","unfoldedLayer"]
+        - state: vehicle_folded
+          map: [ "foldedLayer" ]
+          visible: false
