@@ -1,0 +1,5 @@
+﻿- type: trait
+  id: Disability
+  name: Disability
+  components:
+    - type: Disability
