@@ -4,7 +4,7 @@
   name: WheelChair
   description: Look don't crash!
   components:
-    - type: FireExtinguisherImpulseComponent
+    - type: FireExtinguisherImpulse
     - type: AmbientSound
       sound: ""
     - type: Vehicle
