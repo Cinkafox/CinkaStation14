@@ -4,12 +4,15 @@
     "x": 32,
     "y": 32
   },
-  "license": "",
-  "copyright": "Cinka",
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by discord:Cinemafox#5777",
   "states": [
     {
       "name": "vehicle",
       "directions": 4
+    },
+    {
+      "name": "vehicle_folded"
     },
     {
       "name": "keys"

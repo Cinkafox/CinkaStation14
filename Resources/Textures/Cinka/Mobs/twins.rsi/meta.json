@@ -1,8 +1,10 @@
 {
   "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by discord:Cinemafox#5777",
   "size": {
-    "x": 32,
-    "y": 32
+    "x": 64,
+    "y": 64
   },
   "states": [
     {
