@@ -1,9 +1,7 @@
 ﻿using Content.Server.Cinka.Traits.Components;
-using Content.Shared.Buckle.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Stunnable;
 using Robust.Shared.Containers;
-using Robust.Shared.Physics.Systems;
 
 namespace Content.Server.Cinka.Traits;
 
