@@ -1,0 +1,31 @@
+﻿- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterFurrySuit
+  name: фуррисьюит
+  description: любимая груша для битья синдиката
+  components:
+    - type: Sprite
+      sprite: Cinka/Clothing/OuterClothing/furrysuit.rsi
+    - type: Clothing
+      sprite: Cinka/Clothing/OuterClothing/furrysuit.rsi
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 2.5
+          Slash: 3.0
+          Piercing: 1.4
+          Heat: 1.9
+    - type: ClothingSpeedModifier
+      walkModifier: 0.7
+      sprintModifier: 0.65
+
+
+- type: entity
+  parent: ClothingOuterFurrySuit
+  id: ClothingOuterFurrySuitRGB
+  name: фуррисьюит
+  description: теперь с лгбт подсветкой!
+  components:
+    - type: PointLight
+    - type: RgbLightController
+      layers: [ 0 ]

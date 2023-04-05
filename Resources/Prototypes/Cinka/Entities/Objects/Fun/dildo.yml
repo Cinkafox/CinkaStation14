@@ -5,7 +5,7 @@
   description: He is usually kicked
   components:
   - type: Sprite
-    sprite: Cinka/Fun/dildo.rsi
+    sprite: Cinka/Objects/Fun/dildo.rsi
     state: icon
   - type: UseDelay
     delay: 0.2
