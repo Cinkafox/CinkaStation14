@@ -1,13 +1,13 @@
 ﻿using Content.Client.Cinka.GunSilencerByCat.Components;
+using Content.Shared.Weapons.Ranged.Events;
 using Robust.Client.GameObjects;
-using Robust.Shared.Audio;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Cinka.GunSilencerByCat;
 
 public sealed class GunSilencerByCatSystem : EntitySystem
 {
-
+    [Dependency] private readonly AudioSystem _audioSystem = default!;
     public override void Initialize()
     {
         base.Initialize();
