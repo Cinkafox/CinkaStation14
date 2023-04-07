@@ -16,6 +16,9 @@ namespace Content.Server.Cinka.NekoGirl
             SubscribeLocalEvent<NekoGirlSummonerComponent, UseInHandEvent>(OnSummonerUse);
         }
 
+        /// <summary>
+        /// Summon NekoMaid on summoner use
+        /// </summary>
         private void OnSummonerUse(EntityUid uid, NekoGirlSummonerComponent component, UseInHandEvent args)
         {
             if (args.Handled)
@@ -27,6 +30,11 @@ namespace Content.Server.Cinka.NekoGirl
                 _popupSystem.PopupEntity("Вы израсходовали ману",args.User);
         }
 
+        /// <summary>
+        /// Trying to summon NekoMaid with summoner
+        /// </summary>
+        /// <param name="component"></param>
+        /// <param name="uid">Summoner EntityUid</param>
         private bool TryActivateSummoner(NekoGirlSummonerComponent component,EntityUid uid)
         {
             if (component.UseCount <= 0 || !TryComp<TransformComponent>(uid, out var transform))
@@ -36,7 +44,13 @@ namespace Content.Server.Cinka.NekoGirl
             return true;
         }
 
-        private void SummonNekoGirl(NekoGirlSummonerComponent component,MapCoordinates coordinates,EntityUid summonerUid)
+        /// <summary>
+        /// Trying to summon a NekoGirl
+        /// </summary>
+        /// <param name="component"></param>
+        /// <param name="coordinates"></param>
+        /// <param name="summonerUid"></param>
+        public void SummonNekoGirl(NekoGirlSummonerComponent component,MapCoordinates coordinates,EntityUid summonerUid)
         {
             var nekoGirlUid = Spawn(component.Prototype, coordinates);
             if (TryComp<NekoGirlComponent>(nekoGirlUid, out var nekoGirlComponent))

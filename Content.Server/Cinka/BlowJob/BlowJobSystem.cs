@@ -19,6 +19,9 @@ namespace Content.Server.Cinka.BlowJob
             SubscribeLocalEvent<BlowJobComponent, ActivateInWorldEvent>(OnActivate);
         }
 
+        /// <summary>
+        /// monitors the number of сlick to entity and blow ass if click > 10
+        /// </summary>
         private void OnActivate(EntityUid uid, BlowJobComponent component, ActivateInWorldEvent args)
         {
             component.Clicked=(component.Clicked + 1)% (component.BlowCount+1);

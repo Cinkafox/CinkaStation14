@@ -18,6 +18,9 @@ public sealed class FireExtinguisherImpulseSystem : EntitySystem
         SubscribeLocalEvent<SprayComponent, SprayAttemptEvent>(OnSprayAttempt);
     }
 
+    /// <summary>
+    /// Gives impulse of entity on spray attempt
+    /// </summary>
     private void OnSprayAttempt(EntityUid uid, SprayComponent component, SprayAttemptEvent args)
     {
         if (!TryComp<RiderComponent>(args.User, out var rider) || args.Cancelled ||
@@ -30,6 +33,9 @@ public sealed class FireExtinguisherImpulseSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// Trying to give impulse
+    /// </summary>
     private void TryThrow(EntityUid? vehicle,EntityUid rider)
     {
         if(vehicle != null && TryComp<PhysicsComponent>(vehicle.Value, out var physics) && TryComp<FireExtinguisherImpulseComponent>(vehicle.Value,out _))
