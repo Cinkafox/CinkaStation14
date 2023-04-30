@@ -1,0 +1,5 @@
+﻿- type: trait
+  id: Vampire
+  name: Vampire
+  components:
+    - type: Vampire

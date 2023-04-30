@@ -8,7 +8,6 @@
     - type: AmbientSound
       sound: ""
     - type: Vehicle
-      hasKey: true
     - type: Sprite
       sprite: Cinka/Objects/Vehicles/wheelchair.rsi
       layers:

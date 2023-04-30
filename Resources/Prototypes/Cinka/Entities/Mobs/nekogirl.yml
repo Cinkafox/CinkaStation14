@@ -48,7 +48,7 @@
         gender: female
     - type: NekoGirl
     - type: Speech
-      speechSounds: Cat
+      speechSounds: cat
     - type: Loadout
       prototypes: [NekoGear]
 

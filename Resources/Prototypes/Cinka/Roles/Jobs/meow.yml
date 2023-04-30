@@ -1,0 +1,42 @@
+﻿- type: job
+  id: JobMeow
+  name: Кошкотянка
+  description: Meow
+  playTimeTracker: JobPassenger
+  startingGear: NekoGear
+  icon: "Passenger"
+  supervisors: job-supervisors-everyone
+  access:
+    - Maintenance
+
+- type: job
+  id: JobKukla
+  name: Секс кукла
+  description: кукла
+  playTimeTracker: JobPassenger
+  startingGear: NekoGear
+  icon: "Passenger"
+  supervisors: job-supervisors-everyone
+  access:
+    - Maintenance
+
+- type: job
+  id: JobPrositutka
+  name: Проститутка
+  description: Нечего сказать
+  playTimeTracker: JobPassenger
+  startingGear: NekoGear
+  icon: "Passenger"
+  supervisors: job-supervisors-everyone
+  access:
+    - Maintenance
+
+- type: department
+  id: Brothel
+  description: Бардель
+  color: "#A46106"
+  roles:
+    - JobMeow
+    - JobPrositutka
+    - JobKukla
+

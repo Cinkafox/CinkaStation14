@@ -1,0 +1,7 @@
+﻿- type: entity
+  id: SpawnPointMeow
+  parent: SpawnPointAssistant
+  name: meow
+  components:
+    - type: SpawnPoint
+      job_id: JobMeow
