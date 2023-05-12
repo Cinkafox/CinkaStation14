@@ -28,13 +28,13 @@ public sealed class SpeciesJobWhiteListSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        //SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawn);
+        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawn);
 
     }
 
     private void OnPlayerSpawn(PlayerSpawnCompleteEvent args)
     {
-        if (args.JobId == null || !_prototypeManager.HasIndex<SpeciesJobWhiteListPrototype>(args.JobId))
+        if (!_cfg.GetCVar(CCVars.SpeciesJobWhitelistEnabled) || args.JobId == null || !_prototypeManager.HasIndex<SpeciesJobWhiteListPrototype>(args.JobId))
             return;
 
         var whiteListRaces = _prototypeManager.Index<SpeciesJobWhiteListPrototype>(args.JobId);
