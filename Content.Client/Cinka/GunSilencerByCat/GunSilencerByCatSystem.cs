@@ -36,7 +36,7 @@ public sealed class GunSilencerByCatSystem : EntitySystem
 
         var adjh = sprite.Bounds.Width / 2;
         var adjw = sprite.Bounds.Width - 0.2f;
-        var rsi = new SpriteSpecifier.Rsi(new ResourcePath("Mobs/Pets/cat.rsi"),"cat2_rest");
+        var rsi = new SpriteSpecifier.Rsi(new ("Mobs/Pets/cat.rsi"),"cat2_rest");
 
         var layer = sprite.AddLayer(rsi);
         sprite.LayerMapSet(GunSilencerByCatKey.Key, layer);

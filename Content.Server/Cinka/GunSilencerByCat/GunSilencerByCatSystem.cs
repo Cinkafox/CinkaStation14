@@ -1,7 +1,7 @@
 ﻿using Content.Server.Cinka.GunSilencerByCat.Components;
-using Content.Server.Hands.Components;
 using Content.Server.Speech.Components;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Hands.Components;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;

@@ -4,6 +4,9 @@
 public sealed class VampireComponent : Component
 {
     [ViewVariables]
-    [DataField("Bloodtype")]
-    public string Bloodtype = "Blood";
+    [DataField("BloodType")]
+    public string BloodType = "Blood";
+
+    [DataField("BloodSuckedCount")]
+    public float BloodSuckedCount = 0f;
 }

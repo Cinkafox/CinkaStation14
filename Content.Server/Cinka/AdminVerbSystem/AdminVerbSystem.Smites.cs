@@ -23,7 +23,7 @@ public sealed partial class AdminVerbSystem : EntitySystem
             {
                 Text = "Фуррифай",
                 Category = VerbCategory.Smite,
-                Icon = new SpriteSpecifier.Rsi(new ResourcePath("/Textures/Cinka/Clothing/OuterClothing/furrysuit.rsi"), "icon"),
+                Icon = new SpriteSpecifier.Rsi(new ("/Textures/Cinka/Clothing/OuterClothing/furrysuit.rsi"), "icon"),
                 Act = () =>
                 {
                     var ears = Spawn("ClothingOuterFurrySuit", Transform(args.Target).Coordinates);

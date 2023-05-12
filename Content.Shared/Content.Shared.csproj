@@ -26,6 +26,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Text\Names\*.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cinka\Vampire\Components" />
+  </ItemGroup>
 
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\Robust.CompNetworkGenerator.targets" />

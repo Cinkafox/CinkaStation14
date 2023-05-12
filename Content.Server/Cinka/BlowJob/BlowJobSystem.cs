@@ -10,8 +10,7 @@ namespace Content.Server.Cinka.BlowJob
     public sealed class BlowJobSystem : EntitySystem
     {
         [Dependency] private readonly PopupSystem _popupSystem = default!;
-        [Dependency] private readonly SpillableSystem _spillableSystem = default!;
-
+        [Dependency] private readonly PuddleSystem _puddleSystem = default!;
         public override void Initialize()
         {
             base.Initialize();
@@ -30,7 +29,8 @@ namespace Content.Server.Cinka.BlowJob
 
             Solution bloodSolution = new();
             bloodSolution.AddReagent("Blood", 50);
-            _spillableSystem.SpillAt(args.User, bloodSolution, "PuddleBlood");
+            _puddleSystem.TrySpillAt(args.User, bloodSolution, out _);
+
 
         }
 
