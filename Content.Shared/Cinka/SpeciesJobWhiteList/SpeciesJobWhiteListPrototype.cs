@@ -5,6 +5,7 @@ namespace Content.Shared.Cinka.SpeciesJobWhitelist;
 [Prototype("speciesJobWhiteList")]
 public sealed class SpeciesJobWhiteListPrototype : IPrototype
 {
+
     [ViewVariables]
     [IdDataField]
     public string ID { get; } = default!;

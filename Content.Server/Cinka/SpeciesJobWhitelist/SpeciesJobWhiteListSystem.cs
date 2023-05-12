@@ -29,7 +29,6 @@ public sealed class SpeciesJobWhiteListSystem : EntitySystem
     {
         base.Initialize();
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawn);
-
     }
 
     private void OnPlayerSpawn(PlayerSpawnCompleteEvent args)
