@@ -37,14 +37,4 @@
     - state: main
       sprite: Cinka/Mobs/twins.rsi
   - type: MovementIgnoreGravity
-  - type: Fixtures
-    fixtures:
-    - shape:
-        !type:PhysShapeCircle
-        radius: 1
-      density: 160
-      mask:
-      - LargeMobMask
-      layer:
-      - LargeMobLayer
   - type: CombatMode
