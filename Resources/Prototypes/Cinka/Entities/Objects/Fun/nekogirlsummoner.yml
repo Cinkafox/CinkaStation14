@@ -5,7 +5,7 @@
   description: It emits a constant meow
   components:
     - type: Sprite
-      sprite: Cinka/Fun/nekogirlspawner.rsi
+      sprite: Cinka/Objects/Fun/nekogirlspawner.rsi
       state: icon
     - type: UseDelay
       delay: 0.2

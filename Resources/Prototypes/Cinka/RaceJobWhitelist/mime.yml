@@ -1,4 +1,5 @@
-﻿- type: racejobwhitelist
+﻿- type: speciesJobWhiteList
   id: Mime
   values:
     - Human
+    - Dwarf

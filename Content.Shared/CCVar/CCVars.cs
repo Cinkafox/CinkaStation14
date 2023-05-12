@@ -1589,5 +1589,12 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> ConfigPresetDebug =
             CVarDef.Create("config.preset_debug", true, CVar.SERVERONLY);
+
+
+        /*
+         *  Race Job Whitelist
+         */
+        public static readonly CVarDef<bool> SpeciesJobWhitelistEnabled =
+            CVarDef.Create("speciesJobWhitelist.enabled", true, CVar.SERVERONLY);
     }
 }

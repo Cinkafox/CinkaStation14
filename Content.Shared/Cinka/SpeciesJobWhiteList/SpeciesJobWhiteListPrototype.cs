@@ -1,9 +1,9 @@
 ﻿using Robust.Shared.Prototypes;
 
-namespace Content.Server.Cinka.RaceJobWhitelist;
+namespace Content.Shared.Cinka.SpeciesJobWhitelist;
 
-[Prototype("racejobwhitelist")]
-public sealed class RaceJobWhiteListPrototype : IPrototype
+[Prototype("speciesJobWhiteList")]
+public sealed class SpeciesJobWhiteListPrototype : IPrototype
 {
     [ViewVariables]
     [IdDataField]

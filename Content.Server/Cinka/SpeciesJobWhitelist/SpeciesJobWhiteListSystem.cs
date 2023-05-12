@@ -1,61 +1,65 @@
 ﻿using System.Linq;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
-using Content.Server.Humanoid;
 using Content.Server.Players;
 using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Station.Systems;
-using Content.Shared.Humanoid;
+using Content.Shared.CCVar;
+using Content.Shared.Cinka.SpeciesJobWhitelist;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Server.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 
-namespace Content.Server.Cinka.RaceJobWhitelist;
+namespace Content.Server.Cinka.SpeciesJobWhitelist;
 
-public sealed class RaceWhiteListSystem : EntitySystem
+public sealed class SpeciesJobWhiteListSystem : EntitySystem
 {
     [Dependency] private readonly IServerPreferencesManager _preferencesManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawn);
+        //SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawn);
+
     }
 
     private void OnPlayerSpawn(PlayerSpawnCompleteEvent args)
     {
-        if (args.JobId == null)
+        if (args.JobId == null || !_prototypeManager.HasIndex<SpeciesJobWhiteListPrototype>(args.JobId))
             return;
 
-        var whiteListRaces = _prototypeManager.Index<RaceJobWhiteListPrototype>(args.JobId);
+        var whiteListRaces = _prototypeManager.Index<SpeciesJobWhiteListPrototype>(args.JobId);
 
-        if(CheckRaceInWhitelist(whiteListRaces.Values,args.Profile))
+        if(CheckSpecieInWhitelist(whiteListRaces.Values,args.Profile))
             return;
 
-        _chatManager.DispatchServerMessage(args.Player,"Вашему виду не позволено работать в роли: " + args.JobId);
+        _chatManager.DispatchServerMessage(args.Player,Loc.GetString(
+            "species-is-not-allowed",("job",args.JobId)));
         var allowedCharacter = HumanoidCharacterProfile.RandomWithSpecies(_random.Pick(whiteListRaces.Values));
 
         foreach (var characterProfile in _preferencesManager.GetPreferences(args.Player.UserId).Characters)
         {
             var character = (HumanoidCharacterProfile) characterProfile.Value;
-            if (!CheckRaceInWhitelist(whiteListRaces.Values, character))
+            if (!CheckSpecieInWhitelist(whiteListRaces.Values, character))
                 continue;
-            _chatManager.DispatchServerMessage(args.Player, "По этой причине вместо " + args.Profile.Name + " встанет " + character.Name);
+            _chatManager.DispatchServerMessage(args.Player, Loc.GetString(
+                "alternative-profile",("oldprofile",args.Profile.Name),("newprofile",character.Name)));
             allowedCharacter = character;
             break;
 
         }
 
         _chatManager.DispatchServerMessage(args.Player,
-            "доступные виды для данной професcии: " + String.Join(" ", whiteListRaces.Values));
+            Loc.GetString("species-awalible-for-job",("species",String.Join(" ", whiteListRaces.Values))));
 
         ReplacePlayerMob(args.Player,allowedCharacter,args.Mob,args.JobId,args.Station);
 
@@ -83,7 +87,9 @@ public sealed class RaceWhiteListSystem : EntitySystem
         EntityManager.DeleteEntity(oldMob);
         newMind.TransferTo(mob);
     }
-    public bool CheckRaceInWhitelist(IReadOnlyList<string> whitelist, HumanoidCharacterProfile character)
+
+
+    public bool CheckSpecieInWhitelist(IReadOnlyList<string> whitelist, HumanoidCharacterProfile character)
     {
         return whitelist.Count == 0 || whitelist.Any(whiteListRace => character.Species == whiteListRace);
     }
