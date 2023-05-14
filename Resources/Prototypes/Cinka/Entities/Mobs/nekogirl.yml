@@ -47,8 +47,8 @@
         proper: true
         gender: female
     - type: NekoGirl
-    - type: Speech
-      speechSounds: cat
+    - type: ReplacementAccent
+      accent: cat
     - type: Loadout
       prototypes: [NekoGear]
 

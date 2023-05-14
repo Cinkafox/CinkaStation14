@@ -6,7 +6,8 @@
   components:
     - type: FireExtinguisherImpulse
     - type: AmbientSound
-      sound: ""
+      volume: 0
+      range: -1
     - type: Vehicle
     - type: Sprite
       sprite: Cinka/Objects/Vehicles/wheelchair.rsi
